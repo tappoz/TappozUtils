@@ -1,8 +1,9 @@
-package org.tappoz.amounts;
+package org.tappoz.taxamounts;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+import org.tappoz.taxamounts.TaxRatesUtil;
 
 public class TaxRatesUtilUnitTest
 {

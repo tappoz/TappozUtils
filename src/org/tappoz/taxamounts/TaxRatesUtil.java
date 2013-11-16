@@ -1,4 +1,4 @@
-package org.tappoz.amounts;
+package org.tappoz.taxamounts;
 
 import java.util.Arrays;
 
