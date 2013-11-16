@@ -1,0 +1,7 @@
+This project aggregates some utility classes I wrote over the time.
+
+* org.tappoz.intervals: this package deals with intervals 
+  (overlapping, not overlapping, one included in the other, the covered length of a list of intervals, etc.)
+* org.tappoz.taxamounts: this package deals with progressive tax rates (the problem is solved through recursion)
+
+For every class a Unit Test class is provided.
