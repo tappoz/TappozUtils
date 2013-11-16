@@ -6,7 +6,6 @@ public class TaxRatesUtil
 {
 	private static double taxRanges[] = {0, 5000, 9000, 15000, 22000, 40000};
 	private static double taxRates[] = {0, 0.1, 0.14, 0.23, 0.3, 0.33, 0.45};
-	private static double taxRatesAmounts[] = {0, 0, 0, 0, 0, 0, 0};
 	
 	public static int getTaxRangesUpperBound(double amount){
 		
