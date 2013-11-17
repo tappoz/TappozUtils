@@ -1,5 +1,7 @@
 package org.tappoz.math;
 
+import java.util.Arrays;
+
 public class NumUtils
 {
 	/**
@@ -65,5 +67,59 @@ public class NumUtils
 		if (upperBoundInRange % divisor == 0 && lowerBoundInRange % divisor == 0)
 		    return ++out;
 		return out;
-	 }
+	}
+	
+	/**
+	 * Given an array inputArray of N integers, this method returns the first unique number in inputArray. 
+	 * In other words this method returns the unique number with the lowest position in inputArray. 
+	 * The method returns −1 if there are no unique numbers in inputArray.
+	 * 
+	 * For example:
+	 * <ul>
+	 * <li> given {1, 7, 5, 5, 1, 3} the method will return 7 </li>
+	 * <li> given {5, 7, 7, 5, 5} the method will return -1 </li>
+	 * </ul>
+	 * 
+	 * @param inputArray
+	 * @return
+	 */
+	public static int firstUniqueNumberInInputArray(int[] inputArray) 
+	{
+		// a sorted version of the input array
+    	int[] sortedInputArray = new int[inputArray.length];
+    	System.arraycopy( inputArray, 0, sortedInputArray, 0, inputArray.length);
+    	Arrays.sort(sortedInputArray);
+    	
+    	// looking for unique numbers in the input array
+    	for (int i = 0; i < inputArray.length; i++)
+    	{
+    		// from the documentation:
+    		// If the array contains multiple elements with the specified value, 
+    		// there is no guarantee which one will be found.
+    		// => we need to verify the previous element and the following element
+    		int indexInSortedArray = Arrays.binarySearch(sortedInputArray, inputArray[i]);
+    		if 
+    		(
+    			// the first element in the sorted array
+    			(	indexInSortedArray == 0 && 
+    				sortedInputArray[indexInSortedArray + 1] != sortedInputArray[indexInSortedArray]
+    			) ||
+    			// the last element in the sorted array
+    			(	indexInSortedArray == (inputArray.length - 1) && 
+					sortedInputArray[indexInSortedArray - 1] != sortedInputArray[indexInSortedArray]
+    			) ||
+    			// an element in somewhere inside the array but not at the boundaries
+    			(	indexInSortedArray != 0 && 
+    				indexInSortedArray != (inputArray.length - 1) && 
+    				sortedInputArray[indexInSortedArray - 1] != sortedInputArray[indexInSortedArray] &&
+    				sortedInputArray[indexInSortedArray + 1] != sortedInputArray[indexInSortedArray]
+    			)
+    		)
+    			// we found a unique value
+    			return inputArray[i];
+    	}
+    	
+    	// we did not find any unique number
+    	return -1;
+    }
 }

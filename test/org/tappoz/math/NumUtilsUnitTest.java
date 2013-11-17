@@ -41,4 +41,20 @@ public class NumUtilsUnitTest
 		// only upper bound divisible
 		assertEquals(4, NumUtils.getNumberOfDivisibleIntegersInRange(-22, -5, 5));
 	}
+	
+	@Test
+	public void test_firstUniqueNumberInInputArray()
+	{
+		// looking for the first unique value
+		int[] inputArray = {1, 7, 5, 5, 1, 3};
+		assertEquals(7, NumUtils.firstUniqueNumberInInputArray(inputArray));
+	}
+	
+	@Test
+	public void test_firstUniqueNumberInInputArrayNoUniqueValues()
+	{
+		// there is no unique values in the input array, then the method should return -1
+		int[] inputArray = {5, 7, 7, 5, 5, 7};
+		assertEquals(-1, NumUtils.firstUniqueNumberInInputArray(inputArray));
+	}
 }
