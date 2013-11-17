@@ -6,6 +6,21 @@ import org.junit.Test;
 
 public class NumUtilsUnitTest
 {
+	@Test
+	public void test_getNumberOfDistinctDigits()
+	{
+		assertEquals(1, NumUtils.getNumberOfDistinctDigits(999));
+		assertEquals(4, NumUtils.getNumberOfDistinctDigits(1110002223));
+	}
+	
+	// testing if an Exception is thrown
+	@Test(expected=UnsupportedOperationException.class)
+	public void test_getNumberOfDistinctDigitsThrowsException()
+	{
+		// the input integer must be greater than zero
+		NumUtils.getNumberOfDistinctDigits(-999);
+	}
+	
 	// testing if an Exception is thrown
 	@Test(expected=UnsupportedOperationException.class)
 	public void test_wrongInputValuesFor_getNumberOfDivisibleIntegersInRange()

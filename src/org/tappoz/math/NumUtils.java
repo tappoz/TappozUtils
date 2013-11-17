@@ -15,10 +15,13 @@ public class NumUtils
 	 * </ul>
 	 * 
 	 * @param inputInteger the input value to analyse
-	 * @return
+	 * @throws UnsupportedOperationException when inputInteger is less than zero
+	 * @return an integer representing the number of distinct digits
 	 */
-	public static int getDistinctDigits(int inputInteger)
+	public static int getNumberOfDistinctDigits(int inputInteger)
 	{
+		if (inputInteger < 0)
+			throw new UnsupportedOperationException("You should provide a positive integer as an input!");
 		int[] availableDigits = new int[10];
 		int counter = 0;
         int currentDigit;
@@ -50,7 +53,8 @@ public class NumUtils
 	 * @param lowerBoundInRange the lower bound of the input range
 	 * @param upperBoundInRange the upper bound of the input range
 	 * @param divisor
-	 * @return
+	 * @throws UnsupportedOperationException when the first parameter is an integer greater than the second parameter
+	 * @return the number of divisible integers in that range (included boundaries)
 	 */
 	public static int getNumberOfDivisibleIntegersInRange
 	(int lowerBoundInRange, int upperBoundInRange, int divisor) 
@@ -81,7 +85,7 @@ public class NumUtils
 	 * </ul>
 	 * 
 	 * @param inputArray
-	 * @return
+	 * @return the first unique number in the inputArray
 	 */
 	public static int firstUniqueNumberInInputArray(int[] inputArray) 
 	{
