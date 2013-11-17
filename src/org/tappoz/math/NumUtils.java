@@ -57,9 +57,11 @@ public class NumUtils
 		else if (lowerBoundInRange == upperBoundInRange)
 		    return 1;
 		
-		int out = (int) Math.ceil( (upperBoundInRange - lowerBoundInRange) / divisor );
+		int out = (int) Math.ceil( (double) (upperBoundInRange - lowerBoundInRange) / (double) divisor );
 		
-		if (upperBoundInRange % divisor == 0)
+		if (upperBoundInRange % divisor != 0 && lowerBoundInRange % divisor != 0)
+			return --out;
+		if (upperBoundInRange % divisor == 0 && lowerBoundInRange % divisor == 0)
 		    return ++out;
 		return out;
 	 }
