@@ -40,6 +40,7 @@ public class NumUtils
 	 * <li>lowerBoundInRange,</li>
 	 * <li>upperBoundInRange,</li>
 	 * <li>divisor</li>
+	 * </ul>
 	 * this method returns the number of integers within the range that are divisible by divisor.
 	 * For example, for lowerBoundInRange = 6, upperBoundInRange = 11 and divisor = 2, the method 
 	 * returns 3, because there are three numbers divisible by 2 within the range [6..11], namely 6, 8 and 10.
